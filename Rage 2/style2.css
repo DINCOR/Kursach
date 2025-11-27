@@ -179,16 +179,3 @@
         .footer-col a:hover { color: #fff; }
         .socials a { display: inline-flex; width: 36px; height: 36px; background: rgba(255,255,255,0.1); align-items: center; justify-content: center; border-radius: 4px; margin-right: 10px; color: #fff; }
         .copyright { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.6); }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .courses-grid { grid-template-columns: repeat(2, 1fr); }
-            .cert-container { flex-direction: column; }
-            .slider-wrapper { flex-direction: column; }
-        }
-        @media (max-width: 768px) {
-            .courses-grid { grid-template-columns: 1fr; }
-            .header-inner { flex-direction: column; gap: 20px; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .sub-form { flex-direction: column; }
-        }
