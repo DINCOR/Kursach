@@ -294,27 +294,6 @@
         .footer-col a { color: rgba(255,255,255,0.6); display: block; margin-bottom: 10px; }
         .footer-col a:hover { color: #fff; }
         .socials-footer a { display: inline-flex; width: 36px; height: 36px; background: rgba(255,255,255,0.1); align-items: center; justify-content: center; border-radius: 4px; margin-right: 10px; }
-
-        /* Адаптив */
-        @media (max-width: 992px) {
-            .hero-wrapper { flex-direction: column; text-align: center; }
-            .hero h1 { font-size: 40px; }
-            .hero-btns { justify-content: center; }
-            .about-grid { flex-direction: column; }
-            .about-img, .about-content { width: 100%; }
-            .cert-container { flex-direction: column; }
-            .team-grid, .blog-grid { grid-template-columns: repeat(2, 1fr); }
-            .stats-strip { justify-content: center; }
-        }
-        @media (max-width: 768px) {
-            .header-inner { flex-direction: column; gap: 20px; }
-            .nav-menu ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
-            .courses-grid, .team-grid, .blog-grid { grid-template-columns: 1fr; }
-            .event-card { flex-direction: column; align-items: flex-start; gap: 20px; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .sub-form { flex-direction: column; }
-        }
-        /* --- 6. Benefits Section (That's how we do it) --- */
         .benefits-section {
             padding: 120px 0;
             background-color: #fff;
@@ -390,14 +369,3 @@
     flex: 1;
 }
 
-/* Адаптив для этой секции */
-@media (max-width: 992px) {
-    .benefits-content {
-        flex-direction: column-reverse; /* Картинка сверху, текст снизу на планшетах */
-        gap: 40px;
-        text-align: center;
-    }
-    .b-text {
-        max-width: 100%;
-    }
-}
