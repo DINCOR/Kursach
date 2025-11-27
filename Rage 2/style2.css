@@ -1,0 +1,194 @@
+
+        /* --- 1. Global Styles --- */
+        :root {
+            --primary: #FF3F3A;
+            --dark: #1E212C;
+            --gray: #787A80;
+            --bg-light: #F4F5F6;
+            --bg-footer: #1E212C;
+            --bg-subscribe: #FEDCD2; /* Розовый фон подписки */
+            --border: #E5E8ED;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+        button { cursor: pointer; border: none; outline: none; font-family: inherit; }
+
+        .container {
+            max-width: 1230px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Titles */
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title span {
+            font-weight: 700; font-size: 16px; letter-spacing: 1px;
+            text-transform: uppercase; display: block; margin-bottom: 10px;
+        }
+        .section-title h2 { font-size: 46px; font-weight: 900; }
+
+        /* Buttons */
+        .btn {
+            display: inline-block; padding: 0 32px; height: 52px; line-height: 52px;
+            border-radius: 4px; font-weight: 700; text-align: center; transition: 0.3s;
+        }
+        .btn-primary { background: var(--primary); color: #fff; }
+        .btn-primary:hover { background: #e6302b; }
+        
+        .btn-outline {
+            border: 1px solid var(--primary); color: var(--primary); background: transparent;
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+        }
+        .btn-outline:hover { background: var(--primary); color: #fff; }
+
+        /* --- 2. Header --- */
+        header { padding: 20px 0; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: 900; }
+        .logo span { color: var(--primary); }
+        .nav-menu ul { display: flex; gap: 40px; }
+        .nav-menu a { font-weight: 700; color: #424551; }
+        .nav-menu a:hover { color: var(--primary); }
+        .header-actions { display: flex; gap: 20px; align-items: center; }
+        .login-btn { font-weight: 700; display: flex; align-items: center; gap: 8px; }
+
+        /* --- 3. Courses Grid Section --- */
+        .courses-page { padding: 80px 0; }
+
+        /* Toolbar (Filters + Search) */
+        .courses-toolbar {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 60px; flex-wrap: wrap; gap: 20px;
+        }
+        .filter-tabs { display: flex; gap: 10px; flex-wrap: wrap; }
+        .tab-btn {
+            background: transparent; border: 1px solid transparent;
+            padding: 8px 20px; border-radius: 4px; font-weight: 700; color: var(--gray); transition: 0.3s;
+        }
+        .tab-btn:hover { color: var(--primary); }
+        .tab-btn.active { border-color: var(--primary); color: var(--primary); }
+
+        .search-box { position: relative; width: 300px; }
+        .search-box input {
+            width: 100%; padding: 12px 15px; border: 1px solid #d7dadd; border-radius: 4px;
+        }
+        .search-box i {
+            position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: var(--gray);
+        }
+
+        /* Grid System */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 Колонки */
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        /* Card Styles */
+        .course-card {
+            border: 1px solid var(--border); border-radius: 4px; overflow: hidden;
+            display: flex; flex-direction: column; background: #fff; transition: 0.3s;
+        }
+        .course-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+
+        .card-image {
+            background-color: #FFCF59; /* Желтый фон по дефолту */
+            display: flex; align-items: flex-end; justify-content: center;
+        }
+        /* Разные оттенки фона как на макете */
+        .course-card:nth-child(2n) .card-image { background-color: #F4EAD6; } 
+        .course-card:nth-child(3n) .card-image { background-color: #E6F0F9; }
+
+        .card-image img {
+            max-height: 100%; width: auto; object-fit: contain;
+        }
+
+        .card-body { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
+        
+        .badge {
+            align-self: flex-start; padding: 4px 12px; border-radius: 4px; color: #fff;
+            font-size: 14px; margin-bottom: 20px;
+        }
+        .badge.marketing { background: #03CEA4; }
+        .badge.management { background: #5A87FC; }
+        .badge.hr { background: #F89828; }
+        .badge.design { background: #FF3F3A; }
+
+        .card-body h3 { font-size: 20px; font-weight: 700; margin-bottom: 20px; flex-grow: 1; }
+        
+        .card-meta {
+            display: flex; align-items: center; border-top: 1px solid var(--border); padding-top: 20px;
+        }
+        .price { color: var(--primary); font-weight: 700; margin-right: 15px; font-size: 18px; }
+        .separator { color: var(--gray); margin-right: 15px; }
+        .author { color: var(--gray); font-size: 14px; }
+
+        .load-more-wrapper { text-align: center; }
+
+        /* --- 4. Testimonials --- */
+        .testimonials { background: var(--bg-light); padding: 100px 0; }
+        .slider-wrapper { display: flex; align-items: center; justify-content: center; gap: 40px; position: relative; }
+        .slider-btn {
+            width: 48px; height: 48px; border-radius: 50%; background: transparent; color: var(--dark);
+            font-size: 18px; transition: 0.3s;
+        }
+        .slider-btn:hover { background: var(--primary); color: #fff; box-shadow: 0 10px 20px rgba(255,63,58,0.3);}
+        /* Красная кнопка справа */
+        .slider-btn.active { width: 48px; height: 48px; border-radius: 50%; background: transparent; color: var(--dark);
+            font-size: 18px; transition: 0.3s;
+        }
+        .slider-btn.active:hover { background: var(--primary); color: #fff; box-shadow: 0 10px 20px rgba(255,63,58,0.3);}
+        .testimonial-card {
+            background: #fff; max-width: 1020px; padding: 64px; border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: relative;
+        }
+        .quote-icon { font-size: 28px; color: var(--primary); margin-bottom: 30px; }
+        .t-text { font-size: 18px; color: #424551; margin-bottom: 30px; line-height: 1.6; }
+        .user-info { display: flex; align-items: center; gap: 20px; }
+        .user-avatar { width: 72px; height: 72px; border-radius: 50%; background: #ccc; object-fit: cover; }
+        
+        /* --- 5. Certificate --- */
+        .certificate-section { padding: 100px 0; }
+        .cert-container { display: flex; align-items: center; gap: 60px; }
+        .cert-content { flex: 1; }
+        .cert-image { flex: 1; }
+        .cert-image img {width: 100%; }
+        .cert-logos { display: flex; gap: 30px; margin-top: 40px; opacity: 0.6; }
+
+        /* --- 6. Subscribe --- */
+        .subscribe-section { background: var(--bg-subscribe); padding: 80px 0; text-align: center; }
+        .sub-form { display: flex; justify-content: center; gap: 20px; max-width: 600px; margin: 40px auto 0; }
+        .sub-form input { flex: 1; padding: 0 20px; border-radius: 4px; border: 1px solid #ccc; height: 52px; }
+
+        /* --- Footer --- */
+        footer { background: var(--bg-footer); color: #fff; padding: 80px 0 20px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 2fr; gap: 40px; margin-bottom: 60px; }
+        .footer-col h4 { text-transform: uppercase; margin-bottom: 20px; }
+        .footer-col a { color: rgba(255,255,255,0.6); display: block; margin-bottom: 10px; }
+        .footer-col a:hover { color: #fff; }
+        .socials a { display: inline-flex; width: 36px; height: 36px; background: rgba(255,255,255,0.1); align-items: center; justify-content: center; border-radius: 4px; margin-right: 10px; color: #fff; }
+        .copyright { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.6); }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .courses-grid { grid-template-columns: repeat(2, 1fr); }
+            .cert-container { flex-direction: column; }
+            .slider-wrapper { flex-direction: column; }
+        }
+        @media (max-width: 768px) {
+            .courses-grid { grid-template-columns: 1fr; }
+            .header-inner { flex-direction: column; gap: 20px; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .sub-form { flex-direction: column; }
+        }

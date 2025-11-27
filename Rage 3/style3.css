@@ -1,0 +1,193 @@
+
+        /* --- 1. Global --- */
+        :root {
+            --primary: #FF3F3A;
+            --dark: #1E212C;
+            --gray: #787A80;
+            --bg-light: #F4F5F6;
+            --bg-pink-hero: #FEDCD2; /* Светло-розовый для хедера */
+            --bg-yellow: #FFCF59;
+            --border: #E5E8ED;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+        button { cursor: pointer; border: none; outline: none; font-family: inherit; }
+
+        .container {
+            max-width: 1230px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* UI Elements */
+        .btn {
+            display: inline-block;
+            padding: 0 32px;
+            height: 52px;
+            line-height: 52px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 16px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .btn-primary { background: var(--primary); color: #fff; }
+        .btn-primary:hover { background: #e6302b; }
+        
+        .section-title { margin-bottom: 40px; }
+        .subtitle { font-weight: 700; text-transform: uppercase; margin-bottom: 10px; display: block; letter-spacing: 1px; }
+        .title { font-size: 46px; font-weight: 900; line-height: 1.3; }
+
+        .check-list li {
+            position: relative; padding-left: 30px; margin-bottom: 12px;
+        }
+        .check-list li::before {
+            content: '\f00c'; font-family: "Font Awesome 5 Free"; font-weight: 900;
+            color: var(--primary); position: absolute; left: 0; top: 0;
+        }
+
+        /* --- 2. Header --- */
+        header { padding: 20px 0; background: var(--bg-pink-hero); } /* Фон под цвет Hero */
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: 900; display: flex; align-items: center; }
+        .logo span { color: var(--primary); }
+        .nav-menu ul { display: flex; gap: 40px; }
+        .nav-menu a { font-weight: 700; color: #424551; }
+        .nav-menu a:hover { color: var(--primary); }
+        .header-actions { display: flex; gap: 20px; align-items: center; }
+        .login-btn { font-weight: 700; font-size: 16px; display: flex; align-items: center; gap: 8px; }
+
+
+        /* --- 3. Course Hero --- */
+        .course-hero {
+            background: var(--bg-pink-hero); /* Розоватый фон */
+            padding-bottom: 120px;
+            text-align: center; 
+        }
+        .hero-content { max-width: 800px; margin: 0 auto; padding-top: 40px; }
+        .course-tag {
+            color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; display: block;
+        }
+        .course-hero h1 { font-weight: 900; line-height: 1.3; margin-bottom: 40px; }
+
+        /* --- 4. Main Layout (Content + Sidebar) --- */
+        .course-layout {
+            display: flex; gap: 60px; padding: 120px 0; position: relative;
+        }
+        .main-col { flex: 1; }
+        .sidebar-col { width: 350px; flex-shrink: 0; }
+
+        /* Sidebar Card */
+        .course-sidebar {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 40px 32px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            position: sticky; top: 20px; /* Липкий сайдбар */
+            margin-top: -200px; /* Наложение на Hero секцию */
+        }
+        .sb-row { margin-bottom: 24px; }
+        .sb-label { font-weight: 700; font-size: 14px; text-transform: uppercase; color: #424551; display: block; margin-bottom: 4px; }
+        .sb-value { font-size: 24px; font-weight: 700; color: var(--primary); }
+        .sb-price { font-size: 24px; font-weight: 900; color: var(--dark); }
+
+        /* About Section */
+        .about-section { margin-bottom: 80px; }
+        .about-text { margin-bottom: 40px; color: #424551; font-size: 16px; }
+        .about-learn h3 { font-size: 28px; font-weight: 700; margin-bottom: 24px; }
+
+        /* Curator */
+        .curator-section { margin-bottom: 120px; }
+        .curator-card { display: flex; gap: 30px; align-items: center; }
+        .curator-img { width: 100%; height: 100%; position: relative; padding-right: 10%;}
+        .curator-img img { width: 100%; height: 100%; object-fit: cover; }
+        .curator-info h3 { font-size: 20px; font-weight: 900; margin-bottom: 4px; }
+        .curator-info .job { color: var(--gray); margin-bottom: 20px; display: block; }
+        .curator-bio { color: #424551; margin-bottom: 20px; }
+        .socials a { color: #787A80; margin-right: 12px; font-size: 18px; }
+        .socials a:hover { color: var(--primary); }
+
+        /* Steps */
+        .steps-section { margin-bottom: 120px; }
+        .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 60px; }
+        .step-item { position: relative; }
+        .step-item::after {
+            content: ''; position: absolute; top: 0; right: -15px; width: 1px; height: 100%; 
+            background: linear-gradient(180deg, rgba(30, 33, 44, 0) 0%, rgba(229, 232, 237, 1) 50%, rgba(30, 33, 44, 0) 100%);
+        }
+        .step-item:last-child::after { display: none; }
+        .step-num { font-size: 46px; font-weight: 900; color: #E5E8ED; margin-bottom: 16px; display: block; }
+        .step-item.active .step-num { color: var(--primary); } /* Активный шаг */
+        .step-item h4 { font-size: 20px; margin-bottom: 8px; }
+        .step-text { font-size: 14px; color: var(--gray); }
+
+        /* Discount Banner */
+        .discount-banner {
+            background: #FEDCD2; padding: 60px 0; margin-bottom: 120px; border-radius: 4px;
+        }
+        .discount-content { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 30px; }
+        .discount-text h3 { font-size: 32px; font-weight: 900; }
+        .timer { display: flex; gap: 20px; }
+        .timer-item { text-align: center; }
+        .timer-item span { font-size: 20px; font-weight: 700; display: block; }
+        .timer-item small { font-size: 12px; }
+        
+        /* Benefit Section */
+        .benefit-section { margin-bottom: 120px; }
+        .benefit-layout { display: flex; gap: 60px; }
+        .benefit-title { width: 40%; }
+        .benefit-list { width: 60%; }
+
+        /* Curriculum (Accordions) */
+        .curriculum-section { margin-bottom: 120px; }
+        .curr-layout { display: flex; gap: 60px; align-items: flex-start; }
+        .curr-list { flex: 1; }
+        .curr-img { flex: 1; }
+        
+        details {
+            border: 1px solid var(--border); border-radius: 4px; margin-bottom: 20px;
+            transition: 0.3s;
+        }
+        details[open] { border-color: transparent; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        summary {
+            padding: 20px 24px; font-weight: 700; cursor: pointer; list-style: none;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        summary span { color: var(--primary); margin-right: 10px; }
+        summary::after { content: '+'; font-size: 24px; color: var(--primary); font-weight: 400; }
+        details[open] summary::after { content: '-'; }
+        .curr-content { padding: 0 24px 24px; color: #424551; }
+
+        /* Registration */
+        .registration-section { background: #F4F5F6; padding: 80px 0; margin-bottom: 120px; }
+        .reg-layout { display: flex; gap: 80px; align-items: center; }
+        .reg-img { flex: 1; }
+        .reg-form-col { flex: 1; }
+        .reg-form label { font-size: 14px; margin-bottom: 8px; display: block; color: #424551; }
+        .reg-form input { width: 100%; padding: 12px 16px; border: 1px solid #D7DADD; border-radius: 4px; margin-bottom: 20px; }
+
+        /* Footer (Condensed) */
+        footer { background: var(--dark); color: #fff; padding: 60px 0 20px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-bottom: 40px; }
+        .footer-col h4 { text-transform: uppercase; margin-bottom: 20px; }
+        .footer-col a { color: rgba(255,255,255,0.6); display: block; margin-bottom: 8px; }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .course-layout { flex-direction: column; }
+            .course-sidebar { margin-top: 0; position: static; width: 100%; }
+            .benefit-layout, .curr-layout, .reg-layout { flex-direction: column; }
+            .steps-grid { grid-template-columns: 1fr 1fr; }
+        }
